@@ -1,0 +1,156 @@
+// ----------------------------------------------
+// VARIABLES.SCSS
+// Theme settings
+// ----------------------------------------------
+
+
+// ----------------------------------------------
+// GAPS / MARGINS / PADDING
+// ----------------------------------------------
+$gap: 1.563rem; //25px
+$gap-row: 6.250rem; //100px
+
+
+// ----------------------------------------------
+// FONTS
+// ----------------------------------------------
+$sans-serif: sans-serif;
+$sans-serif-headline: $sans-serif;
+
+
+// ----------------------------------------------
+// FONT WEIGHTS
+// ----------------------------------------------
+$regular: 400;
+$bold: 700;
+
+
+// ----------------------------------------------
+// LINE HEIGHTS
+// ----------------------------------------------
+$lh-base: 1.8;
+$lh-mid: 1.3;
+$lh-compact: 1.15;
+
+
+// ----------------------------------------------
+// LETTER SPACE
+// ----------------------------------------------
+$ls-base: normal;
+$ls-wide: 0.1em; //2px
+
+
+// ----------------------------------------------
+// BODY FONT VARIABLES
+// ----------------------------------------------
+$base-font-family: $sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 16px;
+$base-line-height: $lh-base;
+$base-letter-space: $ls-base;
+
+
+// ----------------------------------------------
+// HEADING FONT SIZES
+// ----------------------------------------------
+$heading-h1-font-size: 2.5em; //50px;
+$heading-h2-font-size: 1.750em; //35px;
+$heading-h3-font-size: 1em;
+$heading-h4-font-size: 1em;
+$heading-h5-font-size: 1.100em; //22px
+$heading-h6-font-size: 1em;
+
+
+// ----------------------------------------------
+// FRONT PAGE HEADING FONT SIZES
+// ----------------------------------------------
+$front-heading-h1-font-size: 3.5em; //70px;
+
+
+// ----------------------------------------------
+// COLOR VARIABLES
+// ----------------------------------------------
+$overlay: rgba(#000,0.75);
+
+$colors: (
+  white: (
+    base: #FFFFFF
+  ),
+  black: (
+    base: #000000
+  ),
+  grey: (
+    light: #f5f5f5,
+    base: #cbcbcb,
+    dark: #2b2d2f
+  ),
+  blue: (
+    light: #369,
+    base: #369,
+    dark: #369
+  ),
+  tan: (
+    light: #F0EDE1,
+    base: #615E4F,
+    dark: #383731
+  ),
+  yellow: (
+    base: #FFDF52
+  ),
+  red: (
+    error: #ff3333
+  )
+);
+
+// ----------------------------------------------
+// MAP GET
+// Example: 'setcolor(black)'
+// Example: 'setcolor(grey, dark)'
+// ----------------------------------------------
+@function setcolor($scheme, $tone: base) {
+  @return map-get(map-get($colors, $scheme), $tone);
+}
+
+// ----------------------------------------------
+// BASE COLOR VARIABLES
+// ----------------------------------------------
+$base-background-color: setcolor(tan,light);
+$base-text-color: setcolor(tan,dark);
+$base-link-color: setcolor(tan,dark);
+$base-link-hover-color: setcolor(tan,dark);
+$base-link-text-decoration: none;
+$base-link-text-decoration-hover: underline;
+
+
+// ----------------------------------------------
+// CTA VARIABLES
+// ----------------------------------------------
+$cta-font-size: 1em;
+$cta-font-family: $sans-serif-headline;
+$cta-font-weight: $bold;
+$cta-letter-space: $ls-base;
+$cta-case: none;
+$cta-padding: 1.2em 2.5em;
+$cta-border: none;
+$cta-background: setcolor(blue,base);
+$cta-color: #FFF;
+$cta-background-hover: setcolor(blue,light);
+$cta-color-hover: #FFF;
+
+
+
+// ----------------------------------------------
+// HEADING FONT VARIABLES
+// ----------------------------------------------
+$heading-font-family: $sans-serif-headline;
+$heading-font-weight: $bold;
+$heading-line-height: $lh-compact;
+$heading-letter-space: $ls-base;
+$heading-case: uppercase;
+$heading-margin: 0;
+
+
+// ----------------------------------------------
+// MISC FONT VARIABLES
+// ----------------------------------------------
+$base-small-font-size: 0.75em;

@@ -1,0 +1,112 @@
+// ----------------------------------------------
+// TYPOGRAPHY.SCSS
+// ----------------------------------------------
+
+
+// ----------------------------------------------
+// Line Heights
+// ----------------------------------------------
+.lh0 {line-height: 0;}
+.lh1 {line-height: 1;}
+.lh-base {line-height: $lh-base;}
+.lh-mid {line-height: $lh-mid;}
+.lh-compact {line-height: $lh-compact;}
+
+
+// ----------------------------------------------
+// LINKS
+// ----------------------------------------------
+a {
+  cursor: pointer;
+  color: $base-link-color;
+  text-decoration: $base-link-text-decoration;
+  &:focus {
+    outline: 1px dashed rgba(#000,0.25);
+  }
+  @include hover {
+    color: $base-link-hover-color;
+    text-decoration: $base-link-text-decoration-hover;
+  }
+}
+
+
+// ----------------------------------------------
+// CTAs
+// ----------------------------------------------
+.btn {@extend %base-button;}
+
+// ----------------------------------------------
+// TYPE STYLES
+// ----------------------------------------------
+.regular {font-weight: $regular;}
+.bold, strong, b, bold {font-weight: $bold;}
+em, italic, italics {font-style: italic;}
+u, underline {text-decoration: underline;}
+.caps {text-transform: uppercase;}
+.nocaps {text-transform: none;}
+sup {vertical-align: super; font-size: 0.875em;}
+sub {vertical-align: sub; font-size: 0.875em;}
+blockquote {border-left: 0.5rem solid setcolor(grey, light); padding-left: $gap;}
+.small, small {font-size: $base-small-font-size;}
+
+
+// ----------------------------------------------
+// HR
+// ----------------------------------------------
+hr { @include hr(setcolor(grey, medium), 2px); }
+
+
+// ----------------------------------------------
+// LISTS
+// ----------------------------------------------
+main ul, ul.list {
+  @include list(disc, circle);
+  &.inline-list {
+    li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0 1em 0 0;
+    }
+  }
+}
+main ol, ol.digit { @include list(decimal, upper-alpha); }
+.two-col {@include list-col(2, md);}
+
+// ----------------------------------------------
+// HEADLINES
+// ----------------------------------------------
+h1,h2,h3,h4,h5,h6 {
+  @extend %base-heading;
+}
+
+.h1, h1 {font-size: $heading-h1-font-size;}
+.h2, h2 {font-size: $heading-h2-font-size;}
+.h3, h3 {font-size: $heading-h3-font-size;}
+.h4, h4 {font-size: $heading-h4-font-size;}
+.h5, h5 {font-size: $heading-h5-font-size;}
+.h6, h6 {font-size: $heading-h6-font-size;}
+
+
+// ----------------------------------------------
+// BODY AREA
+// ----------------------------------------------
+.body-area {
+  > * {
+    margin-bottom: $gap;
+    margin-top: $gap;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// ----------------------------------------------
+// TYPOGRAPHY BLOCKS
+// ----------------------------------------------
+p {
+  margin-bottom: $gap;
+}

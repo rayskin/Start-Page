@@ -1,0 +1,135 @@
+// ----------------------------------------------
+// MIXINS.SCSS
+// Mixin code does not generate on the front end. Used on the backend only.
+// ----------------------------------------------
+
+
+// ----------------------------------------------
+// LISTS
+// ----------------------------------------------
+@mixin list($a, $b) {
+  margin: 0;
+  padding: 0;
+  li {
+    display: list-item;
+    list-style-type: $a;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    ul, ol {
+      padding-top: 1em;
+    }
+    li {
+      list-style-type: $b;
+      li {
+        list-style-type: square;
+      }
+    }
+  }
+}//mixin: lists
+
+
+// ----------------------------------------------
+// UL / OL COLS
+// ----------------------------------------------
+@mixin list-col($a, $b) {
+  @include breakpoint($b) {
+    column-count: $a;
+    li {
+      /* autoprefixer: off */
+      page-break-inside: avoid;
+    }
+    li {
+      break-inside: avoid;
+      max-width: calc(100% - 25px); //fixes ff bug
+    }
+  }
+}//mixin: ul,ol
+
+
+// ----------------------------------------------
+// TRANSITION
+// ----------------------------------------------
+@mixin transition($a:0.3s) {
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	transition-duration: $a;
+}//mixin: transition
+
+
+// ----------------------------------------------
+// BACKGROUND SIZE, POSITION, REPEAT
+// ----------------------------------------------
+@mixin background($a, $b, $c) {
+  background-size: $a;
+  background-position: $b;
+  background-repeat: $c;
+}//mixin: background_size_position_repeat
+
+
+// ----------------------------------------------
+// OBJECT FIT WRAP
+// ----------------------------------------------
+@mixin object-fit-wrap($a, $b) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  user-select: none;
+  img {
+    @extend %img-w100-h100;
+    object-fit: $a;
+    object-position: $b;
+  }
+}//mixin: object-fit-wrap
+
+
+// ----------------------------------------------
+// HR
+// ----------------------------------------------
+@mixin hr($a, $b) {
+  width: 100%;
+  border: none;
+  pointer-events: none;
+  user-select: none;
+  height: $b;
+  background: $a;
+  display: block;
+  margin: $gap 0;
+}//mixin: hr
+
+
+// ----------------------------------------------
+// COLOR CLASS GENERATOR
+// ----------------------------------------------
+@mixin color-modifiers($attribute: 'color', $prefix: '-', $separator: '-') {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{$separator}#{$tone} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}//mixin: color-glass-generator
+
+
+// ----------------------------------------------
+// BG COLOR CLASS GENERATOR
+// ----------------------------------------------
+@mixin bg-color-modifiers($attribute: 'background-color', $prefix: '-', $separator: '-') {
+  @each $name, $color in $colors {
+    &#{$prefix}#{$name} {
+      @each $tone, $hex in $color {
+        &#{$separator}#{$tone} {
+          #{$attribute}: $hex;
+        }
+      }
+    }
+  }
+}//mixin: color-glass-generator

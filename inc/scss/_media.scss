@@ -1,0 +1,82 @@
+// ----------------------------------------------
+// MEDIA.SCSS
+// Images, Backgrounds, Videos
+// ----------------------------------------------
+
+
+// ----------------------------------------------
+// IMAGES
+// ----------------------------------------------
+svg,img {
+  image-rendering: -webkit-optimize-contrast;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+
+// ----------------------------------------------
+// OBJECT FIT WRAPS
+// ----------------------------------------------
+.object-cover-wrap {
+  @include object-fit-wrap(cover, 50% 50%);
+}
+.object-contain-wrap {
+  @include object-fit-wrap(contain, 50% 50%);
+}
+
+
+// ----------------------------------------------
+// OBJECT FIT POSITIONS
+// ---------------------------------------------
+.top-center img {
+  object-position: top center;
+}
+.bottom-center img {
+  object-position: bottom center;
+}
+.top-left img {
+  object-position: top left;
+}
+.top-right img {
+  object-position: top right;
+}
+.bottom-left img {
+  object-position: bottom left;
+}
+.bottom-right img {
+  object-position: bottom right;
+}
+
+
+// ----------------------------------------------
+// FEATURED IMAGES
+// ----------------------------------------------
+.featured--image {
+  position: relative;
+
+  &.square {
+    padding-bottom: 100%;
+  }
+
+  &.wide {
+    padding-bottom: 56.5%;
+  }
+
+  &.rectangle {
+    padding-bottom: 75%;
+  }
+
+}
+
+
+// ----------------------------------------------
+// BKG CLASSES
+// ----------------------------------------------
+.contain {
+  @include background(contain, 50% 50%, no-repeat);
+}
+.cover {
+  @include background(cover, 50% 50%, no-repeat);
+}

@@ -1,0 +1,43 @@
+/*!
+Theme Name: Straight North
+Description: Blankslate Child Theme
+Author: Straight North
+Author URI: http://www.straightnorth.com
+Template: blankslate
+Version: 1.0.0
+License:
+License URI:
+Tags:
+Text Domain: blankslate-child
+*/
+
+
+// DEVELOPED BY STRAIGHTNORTH.COM
+// ==============================
+// ==============================
+
+@import "_reset.scss"; //reset scss
+
+@import "_viewports.scss"; //responsive viewports
+
+@import "_variables"; //variables
+
+@import "_mixins.scss"; //mixins
+
+@import "_colors.scss"; //colors
+
+@import "_typography.scss"; //fonts, type sizes
+
+@import "_extends.scss"; //extends
+
+@import "_media.scss"; //images, videos, etc
+
+@import "_flexboxgrid.scss"; //flexbox grid
+
+@import "_body.scss"; // global styles
+
+@import "_layout.scss"; //layouts
+
+@import "_frontpage.scss"; //front page styles
+
+@import "_templateparts.scss"; //views, modules, etc

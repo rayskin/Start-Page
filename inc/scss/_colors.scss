@@ -1,0 +1,19 @@
+// *****************************************
+// COLORS
+// defined site colors
+// *****************************************
+
+
+// ==================================
+// SELECTION / HIGHLIGHTS
+// ==================================
+::selection {
+	background: setcolor(black);
+	color: setcolor(white);
+}
+
+// ==================================
+// CLASSES
+// ==================================
+.color {@include color-modifiers;}
+.bg {@include bg-color-modifiers;}

@@ -1,0 +1,76 @@
+// ----------------------------------------------
+// BODY.SCSS
+// Global css rules
+// ----------------------------------------------
+
+// ----------------------------------------------
+// HTML, BODY
+// ----------------------------------------------
+html,
+body {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  background-color: $base-background-color;
+  color: $base-text-color;
+  letter-spacing: $base-letter-space;
+  line-height: $base-line-height;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+  &.menu-open {
+    #container {
+      height: 100vh;
+      overflow: hidden;
+      pointer-events: none;
+    }
+  }
+}
+
+body {
+  font-size: $base-font-size;
+}
+
+html {
+  font-size: 75%;
+}
+
+// SM -------------------------------------------
+@include breakpoint(sm) {
+
+  html {
+    font-size: 83.33%;
+  }
+
+  body {
+    font-size: $base-font-size+1.33px;
+  }
+
+}//sm
+
+// MD  ------------------------------------------
+@include breakpoint(md) {
+
+  html {
+    font-size: 91.66%;
+  }
+
+  body {
+    font-size: $base-font-size+2.66px;
+  }
+
+}//md
+
+// LG -------------------------------------------
+@include breakpoint(lg) {
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    font-size: $base-font-size+4px;
+  }
+
+}//lg
